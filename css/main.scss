@@ -1,0 +1,339 @@
+// @import "foundation/base";
+
+$baseColor:#4D0000;
+$btnColor:#A97B0B;
+
+body{
+  font-family: 'Noto Sans JP', sans-serif;
+  // background-color: black;
+  // color: white;
+}
+
+
+// ヘッダ-
+header{
+  background-color: $baseColor;
+  height: 94px;
+  text-align: right;
+  position: relative;
+
+
+  h1{
+    position: absolute;
+    top:22px;
+    left: 25px;
+  }
+
+  img{
+    width:100%;
+    width: 150px;
+    height: auto;
+  }
+
+  ul{
+    padding-right:50px;
+
+    li{
+      display: inline-block;
+      line-height: 94px;
+      padding-right: 25px;
+  
+      a{
+        display: block;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// トップコンテンツ
+#top{
+  background-image: url(../image/street-4942809_1920.png);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 674px;
+  position: relative;
+  text-align: center;
+
+  & .top_title{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-size: 50px;
+    line-height: 1.5em;
+  }
+}
+
+
+// 特徴コンテンツ 
+#feature, #plan, #blog, #faq_content{
+  background:black;
+  color: white;
+
+  h3{
+    text-align: center;
+    font-size: 32px;
+    padding:70px 0 40px;
+  }
+
+  p{
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 50px;
+  }
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+
+  &:nth-child(2){
+  flex-direction: row-reverse;
+  }
+
+  & .contents_text{    
+    padding:40px;  
+    
+
+    &>h4{
+      font-size: 28px;
+      font-weight: bold;
+      padding-bottom: 28px;
+      line-height: 1.5em;
+      color:#FFFFDE;
+    }
+
+    &>p{
+      font-size:18px;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.btn{
+  text-align: center;
+
+  &>a{
+    font-size:14px;
+    padding:11px 36px;
+    background-color:$btnColor;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+ }
+}
+
+// ここからプラン
+
+.plan_contents{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 100px;
+
+
+  .contents_info{
+    background-color: #E5E5E5;
+    color:black;
+    width: 389px;
+    height: 387px;
+    text-align: center;
+
+
+    & img{
+      width: 160px;
+      height: 160px;
+    }
+
+    .plan_contents_title{
+      padding: 0px 24px;
+    }
+
+    h5{
+      font-size: 28px;
+      font-weight: bold;
+      padding-bottom: 28px;
+      
+    }
+
+    p{
+      font-size: 18px;
+    }
+  }
+}
+
+// スライダー部分
+
+#wrap{
+  padding-bottom: 100px;
+}
+
+  .slide-item{
+    // width: 322px;
+    display: inline-block;
+    
+    & +li{
+      margin-left:25px;
+    }
+
+
+    &>img{
+      display: block;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      // 書きがないと伸び縮みしない
+      width: 100%;;
+      
+
+    }
+
+    & .slider_text{
+      background-color: #fff;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding:25px;
+      color:black;
+      height: 200px;
+      box-sizing: border-box;
+      display: block;
+
+      &>h6{
+        font-size: 18px;
+        padding-bottom: 65px;
+      }
+
+      &>p{
+        font-size:14px!important;
+      }
+    }
+  }
+
+// ブログ項目
+
+.contents_item{
+  padding-bottom: 50px;
+   text-align: left;
+   
+  span{
+    background-color:#4D0000;
+    display:inline-block;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size:14px;
+    line-height: 30px;
+    margin-right: 20px;
+
+    &:nth-child(n+1){
+      margin-top: 25px;
+    }
+  }
+
+  &>a{
+    color:white;
+    font-size: 24px;
+  }
+}
+
+.btn{
+  display: block;
+}
+
+// アコーディオン
+
+
+
+.faq{
+  width:907px;
+  margin: auto;
+  padding-bottom: 80px;
+}
+
+.faq-title{
+  border-bottom: solid 1px #333;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  color:#333;
+  font-size: 16px;
+  padding:20px 0;
+
+
+  &::after{
+    position: absolute;
+    top: 50%;
+    right:10px;
+    display: block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-top: solid 1px #333;
+    border-right: solid 1px #333;
+    transform: translate(0, -50%) rotate(135deg);
+    transform-origin: center;
+  }
+}
+
+.faq-title.active::after{
+  transform:translate(0, -50%) rotate(-45deg);
+}
+
+.faq-description{
+  display: none;
+  padding: 20px 50px;
+  text-align: center;
+  background-color: #F2F2F2;
+  color:black;
+}
+
+.faq-description.active{
+  display: block;
+}
+
+// フッターの作成
+
+footer{
+  background-color: #4D0000;
+
+  ul.footer_contents{
+    text-align: center;
+    padding:60px 0px;
+    
+    li.footer_item{
+      display: inline-block;
+
+      & + li:nth-child(n+1){
+        margin-left:40px;
+      }
+     
+      &>a{
+        display: block;
+        color:white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+    }
+  } 
+
+  & p{
+    color:white;
+    text-align: center;
+    font-size: 16px;
+    padding:16px 0;
+  }
+}
+ .footer_logo{
+    height: 70px;
+    width: 188px;
+    margin: auto;
+  &>img{
+    width:100%;
+  }
+ }
+
+
+
